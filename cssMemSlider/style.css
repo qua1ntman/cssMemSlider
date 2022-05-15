@@ -30,7 +30,11 @@ h1 {
   flex-direction: column;
   width: 70vw;
 }
-
+@media (max-width: 767px) {
+  .slider-wrapper {
+    width: 90vw;
+  }
+}
 
 ol, li {
   list-style: none;
@@ -46,7 +50,13 @@ ol, li {
   border-radius: 10px;
   margin: 4vh 0;
 }
-
+@media (max-width: 767px) {
+  #slider_images {
+    margin: 2vh 0;
+    width: 90vw;
+    height: 50vw;
+  }
+}
 
 .slider-img {
   display: flex;
@@ -64,7 +74,11 @@ img {
   align-self: center;
   justify-self: center;
 }
-
+@media (max-width: 767px) {
+  img {
+    width: 100%;
+  }
+}
 
 .wrap {
   display: flex;
@@ -72,7 +86,11 @@ img {
   width: 100%;
   flex-direction: row-reverse;
 }
-
+@media (max-width: 767px) {
+  .wrap {
+    flex-direction: column;
+  }
+}
 
 .new-slider-btns {
   display: flex;
@@ -89,7 +107,11 @@ input[type=radio] {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 }
-
+@media (max-width: 767px) {
+  #text {
+    width: 90vw;
+  }
+}
 
 .slider-text {
   display: flex;
@@ -142,7 +164,11 @@ input[type=radio] {
 #points > label:active > label > label {
   background: rgb(192, 192, 192);
 }
-
+@media (max-width: 767px) {
+  #points {
+    align-self: center;
+  }
+}
 
 #slide1:checked ~ .wrap #points label:nth-child(1) > label > label,
 #slide2:checked ~ .wrap #points label:nth-child(2) > label > label,
