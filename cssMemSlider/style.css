@@ -9,6 +9,10 @@
   transition: all 0.2s ease-out;
 }
 
+*::-webkit-scrollbar {
+  height: 0;
+  background: transparent;
+}
 
 body {
   display: flex;
@@ -27,6 +31,7 @@ h1 {
   width: 70vw;
 }
 
+
 ol, li {
   list-style: none;
 }
@@ -41,6 +46,7 @@ ol, li {
   border-radius: 10px;
   margin: 4vh 0;
 }
+
 
 .slider-img {
   display: flex;
@@ -59,6 +65,7 @@ img {
   justify-self: center;
 }
 
+
 .wrap {
   display: flex;
   justify-content: space-between;
@@ -67,6 +74,13 @@ img {
 }
 
 
+.new-slider-btns {
+  display: flex;
+}
+
+input[type=radio] {
+  display: none;
+}
 
 #text {
   overflow-y: hidden;
@@ -75,6 +89,7 @@ img {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 }
+
 
 .slider-text {
   display: flex;
@@ -85,6 +100,81 @@ img {
   width: 20%;
   scroll-snap-align: start;
   height: 30px;
+}
+
+#points > label {
+  cursor: pointer;
+  pointer-events: visiblePainted;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+#points > label > label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: visiblePainted;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(154, 143, 255);
+}
+#points > label > label > label {
+  cursor: pointer;
+  pointer-events: visiblePainted;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgb(154, 143, 255);
+}
+#points > label:hover > label {
+  background: white;
+}
+#points > label:hover > label > label {
+  background: white;
+}
+#points > label:active > label {
+  background: rgb(192, 192, 192);
+}
+#points > label:active > label > label {
+  background: rgb(192, 192, 192);
+}
+
+
+#slide1:checked ~ .wrap #points label:nth-child(1) > label > label,
+#slide2:checked ~ .wrap #points label:nth-child(2) > label > label,
+#slide3:checked ~ .wrap #points label:nth-child(3) > label > label,
+#slide4:checked ~ .wrap #points label:nth-child(4) > label > label,
+#slide5:checked ~ .wrap #points label:nth-child(5) > label > label {
+  background: rgb(37, 37, 37);
+}
+
+#slide1:checked ~ #slider_images > ol,
+#slide1:checked ~ .wrap #text > div {
+  margin-left: 0;
+}
+
+#slide2:checked ~ #slider_images > ol,
+#slide2:checked ~ .wrap #text > div {
+  margin-left: -100%;
+}
+
+#slide3:checked ~ #slider_images > ol,
+#slide3:checked ~ .wrap #text > div {
+  margin-left: -200%;
+}
+
+#slide4:checked ~ #slider_images > ol,
+#slide4:checked ~ .wrap #text > div {
+  margin-left: -300%;
+}
+
+#slide5:checked ~ #slider_images > ol,
+#slide5:checked ~ .wrap #text > div {
+  margin-left: -400%;
 }
 
 footer {
