@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: white;
+  -ms-overflow-style: none;
+  transition: all 0.3s ease-out;
+}
+
+*::-webkit-scrollbar {
+  height: 0;
+  background: transparent;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(37, 37, 37);
+}
+
+h1 {
+  margin-top: 2vh;
+}
+
+.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+}
+@media (max-width: 767px) {
+  .slider-wrapper {
+    width: 90vw;
+  }
+}
+
+ol, li {
+  list-style: none;
+}
+
+#slider_images {
+  width: 70vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  height: 39vw;
+  border-radius: 10px;
+  margin: 4vh 0 2vh;
+}
+@media (max-width: 767px) {
+  #slider_images {
+    margin: 2vh 0;
+    width: 90vw;
+    height: 50vw;
+  }
+}
+
+.slider-img {
+  display: flex;
+  width: 500%;
+}
+.slider-img > li {
+  height: auto;
+  width: 20%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+img {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+}
+@media (max-width: 767px) {
+  img {
+    width: 100%;
+  }
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row-reverse;
+}
+@media (max-width: 767px) {
+  .wrap {
+    flex-direction: column;
+  }
+}
+
+.new-slider-btns {
+  display: flex;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+#text {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  height: 40px;
+  line-height: 40px;
+}
+@media (max-width: 767px) {
+  #text {
+    height: auto;
+    line-height: normal;
+    width: 90vw;
+  }
+}
+
+.slider-text {
+  display: flex;
+  width: 500%;
+}
+.slider-text > div {
+  display: inline-block;
+  width: 20%;
+  scroll-snap-align: start;
+  height: 30px;
+}
+
+#points > label {
+  cursor: pointer;
+  pointer-events: visiblePainted;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+@media (max-width: 767px) {
+  #points > label {
+    width: 30px;
+    height: 30px;
+  }
+}
+#points > label > label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: visiblePainted;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(154, 143, 255);
+}
+@media (max-width: 767px) {
+  #points > label > label {
+    width: 15px;
+    height: 15px;
+  }
+}
+#points > label > label > label {
+  cursor: pointer;
+  pointer-events: visiblePainted;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgb(154, 143, 255);
+}
+@media (max-width: 767px) {
+  #points > label > label > label {
+    width: 10px;
+    height: 10px;
+  }
+}
+#points > label:hover > label {
+  background: white;
+}
+#points > label:hover > label > label {
+  background: white;
+}
+#points > label:active > label {
+  background: rgb(192, 192, 192);
+}
+#points > label:active > label > label {
+  background: rgb(192, 192, 192);
+}
+@media (max-width: 767px) {
+  #points {
+    align-self: center;
+  }
+}
+
+#slide1:checked ~ .wrap #points label:nth-child(1) > label > label,
+#slide2:checked ~ .wrap #points label:nth-child(2) > label > label,
+#slide3:checked ~ .wrap #points label:nth-child(3) > label > label,
+#slide4:checked ~ .wrap #points label:nth-child(4) > label > label,
+#slide5:checked ~ .wrap #points label:nth-child(5) > label > label {
+  background: rgb(37, 37, 37);
+}
+
+#slide1:checked ~ #slider_images > ol,
+#slide1:checked ~ .wrap #text > div {
+  margin-left: 0;
+}
+
+#slide2:checked ~ #slider_images > ol,
+#slide2:checked ~ .wrap #text > div {
+  margin-left: -100%;
+}
+
+#slide3:checked ~ #slider_images > ol,
+#slide3:checked ~ .wrap #text > div {
+  margin-left: -200%;
+}
+
+#slide4:checked ~ #slider_images > ol,
+#slide4:checked ~ .wrap #text > div {
+  margin-left: -300%;
+}
+
+#slide5:checked ~ #slider_images > ol,
+#slide5:checked ~ .wrap #text > div {
+  margin-left: -400%;
+}
+
+footer {
+  width: 70vw;
+  display: flex;
+  justify-content: flex-end;
+  color: rgb(182, 182, 182);
+  margin-top: 1vw;
+}
+@media (max-width: 767px) {
+  footer {
+    width: 90vw;
+  }
+}
